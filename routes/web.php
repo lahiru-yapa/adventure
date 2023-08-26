@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +21,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     /**
      * Home Routes
      */
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/admin', 'HomeController@index')->name('home.index');
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -42,3 +45,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
 });
+
+
+
+
+Route::get('/', [HomeController::class, 'indexuser'])->name('home');
+Route::get('destination1', [HomeController::class, 'destination1'])->name('destination1');
+Route::get('gallery', [HomeController::class, 'gallery'])->name('gallery');
+
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+
