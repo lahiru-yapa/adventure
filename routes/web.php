@@ -15,7 +15,7 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// fff
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**
