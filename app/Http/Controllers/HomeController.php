@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index() 
     {
-        return view('home.index');
+        return view('Pages.admin.index');
     }
 
     public function indexuser(Request $request)

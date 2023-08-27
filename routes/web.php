@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminHomeController;
 
 
 /*
@@ -15,8 +16,7 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// fff11
-//fff22
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**
@@ -34,8 +34,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Login Routes
          */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
+        Route::get('/login1', 'LoginController@show')->name('login.show');
+        Route::post('/login1', 'LoginController@login')->name('login.perform');
 
     });
 
@@ -47,12 +47,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     });
 });
 
-
-
-
 Route::get('/', [HomeController::class, 'indexuser'])->name('home');
 Route::get('destination1', [HomeController::class, 'destination1'])->name('destination1');
 Route::get('gallery', [HomeController::class, 'gallery'])->name('gallery');
-
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashbord', [AdminHomeController::class, 'index'])->name('admin_home');
+});
