@@ -56,4 +56,6 @@ Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashbord', [AdminHomeController::class, 'index'])->name('admin_home');
+    Route::get('/createnewtour', [AdminHomeController::class, 'createNew'])->name('createnewtour');
+    Route::POST('/createtour', [AdminHomeController::class, 'create'])->name('admin_create');
 });
