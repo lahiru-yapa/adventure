@@ -58,4 +58,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashbord', [AdminHomeController::class, 'index'])->name('admin_home');
     Route::get('/createnewtour', [AdminHomeController::class, 'createNew'])->name('createnewtour');
     Route::POST('/createtour', [AdminHomeController::class, 'create'])->name('admin_create');
+    Route::POST('/upload', [AdminHomeController::class, 'upload'])->name('ckeditor.upload');
 });

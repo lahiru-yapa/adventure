@@ -18,7 +18,7 @@ class AdminHomeController extends Controller
     
     public function create(Request $request)
     {
-        dd($request);
+        dd($request->all());
         // Validate the incoming request
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
