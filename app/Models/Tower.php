@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Tower extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -22,10 +22,11 @@ class User extends Authenticatable
         'description',
         'location',
         'location_map_link',
-        'Included',
+        'included',
         'group_size',
         'price',
         'images',
+        'category',
 
     ];
   

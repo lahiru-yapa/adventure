@@ -21,12 +21,12 @@
 
 
                             <div class="input-field col s12">
-                                <input id="list-title" type="text" class="validate" name="pcg_name">
+                                <input id="list-title" type="text" class="validate" name="title">
                                 <label for="list-title">Package Name</label>
                             </div>
 
                             <div class="input-field col s12">
-                                <input id="list-title" type="text" class="validate"name="map">
+                                <input id="list-title" type="text" class="validate"name="location_map_link">
                                 <label for="list-title">Map</label>
                             </div>
 
@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="input-field col s12">
-                                <textarea id="editor" name="editor">Your content here</textarea>
+                                <textarea id="editor" name="description">Your content here</textarea>
                                 <label for="list-title">Price</label>
                             </div>
 
@@ -70,18 +70,15 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
-                                <label for="textarea1">Package Descriptions:</label>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <select multiple>
+                                <select name="category">
                                     <option value="" disabled selected>Choose Category</option>
-                                    <option value="1">Hotels</option>
+                                    <option value="hiking">hiking</option>
+                                    <option value="couple">couple</option>
+                                    <option value="family">family</option>
+
 
                                 </select>
                                 <label>Select Category</label>

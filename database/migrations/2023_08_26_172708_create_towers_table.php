@@ -17,8 +17,9 @@ return new class extends Migration
             $table->text('description');  
             $table->string('location_map_link')->nullable(); 
             $table->string('location');
-            $table->string('Included');
+            $table->string('Included')->nullable();
             $table->string('group_size');
+            $table->string('category');
             $table->decimal('price', 10, 2);
             $table->json('images')->nullable();
             $table->timestamps();

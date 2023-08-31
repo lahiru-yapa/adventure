@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tower;
+
 
 class AdminHomeController extends Controller
 {
@@ -18,16 +20,24 @@ class AdminHomeController extends Controller
     
     public function create(Request $request)
     {
-        dd($request->all());
-        // Validate the incoming request
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-        ]);
+        
+        $data = $request->all(); // Get all form data
+dd($data);
+    // Create a new instance of your model and fill it with the form data
+    $model = new Tower();
+    $model->fill($data);
 
-        // Create a new record in the database
-        FormData::create($validatedData);
+    // Save the model to the database
+    $model->save();
+        // // Validate the incoming request
+        // $validatedData = $request->validate([
+        //     'name' => 'required|string|max:255',
+        // ]);
 
-        return redirect()->route('form-success');
+        // // Create a new record in the database
+        // FormData::create($validatedData);
+
+        return redirect()->route('home.index');
     }
    
 }
