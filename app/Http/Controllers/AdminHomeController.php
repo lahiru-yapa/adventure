@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Tower;
 
@@ -20,24 +20,36 @@ class AdminHomeController extends Controller
     
     public function create(Request $request)
     {
-        
-        $data = $request->all(); // Get all form data
-dd($data);
-    // Create a new instance of your model and fill it with the form data
-    $model = new Tower();
-    $model->fill($data);
+        try {
+            DB::beginTransaction();
+    
+            // Create a new instance of your model and fill it with the form data
+            $model = new Tower();
+            $model->fill($request->all());
+    
+         
+            if ($request->hasFile('image_files')) {
+                $imagePaths = [];
+    
+                foreach ($request->file('image_files') as $image) {
+                    $path = $image->store('assets/image', 'public');
+                    $imagePaths[] = $path;
+                }
+                $jsonEncodedPaths = json_encode($imagePaths);
 
-    // Save the model to the database
-    $model->save();
-        // // Validate the incoming request
-        // $validatedData = $request->validate([
-        //     'name' => 'required|string|max:255',
-        // ]);
-
-        // // Create a new record in the database
-        // FormData::create($validatedData);
-
-        return redirect()->route('home.index');
+                // Store the JSON-encoded string in the database
+                $model->images = $jsonEncodedPaths; // Store the JSON-encoded string
+                $model->save();
+            }
+    
+            DB::commit();
+    
+            return redirect()->route('home.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            // Handle the exception, such as logging or displaying an error message
+            return redirect()->back()->withInput()->withErrors(['error' => 'An error occurred']);
+        }
     }
    
 }

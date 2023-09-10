@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');  
-            $table->string('location_map_link')->nullable(); 
+            $table->text('location_map_link')->nullable();
             $table->string('location');
             $table->string('Included')->nullable();
             $table->string('group_size');

@@ -17,7 +17,7 @@ class Review extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [ 'tower_id', 'comment'];
+    protected $fillable = [ 'tower_id', 'comment','name','email'];
 
   
     public function tower()

@@ -54,8 +54,8 @@
             <div class="row">
                 <div class="col-xl-6">
                     <div class="img-box1">
-                        <div class="img1"><img src="assets/img/normal/about_1_1.jpg" alt="About"></div>
-                        <div class="img2"><img src="assets/img/normal/about_1_2.jpg" alt="About"></div>
+                        <div class="img1"><img src="assets/img/normal/kira2.jpeg" alt="About"></div>
+                        <div class="img2"><img src="assets/img/normal/kira2.jpg" alt="About"></div>
                         <div class="shape1"><img src="assets/img/normal/about_shape_1.svg" alt="shape"></div>
                     </div>
                 </div>

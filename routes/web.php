@@ -48,9 +48,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 });
 
 Route::get('/', [HomeController::class, 'indexuser'])->name('home');
-Route::get('destination1', [HomeController::class, 'destination1'])->name('destination1');
+Route::get('/destination1/{id}', [HomeController::class, 'destination1'])->name('destination1');
 Route::get('gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('destinatioDetails/{id}', [HomeController::class, 'destinatioDetails'])->name('destinatioDetails');
+Route::POST('review', [HomeController::class, 'review'])->name('review');
+Route::POST('booking', [HomeController::class, 'booking'])->name('booking');
+
 
 
 
