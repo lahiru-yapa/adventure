@@ -18,10 +18,10 @@
             <link rel="stylesheet" href="css/font-awesome.min.css">
 
             <!--== ALL CSS FILES ==-->
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/mob.css">
-            <link rel="stylesheet" href="css/bootstrap.css">
-            <link rel="stylesheet" href="css/materialize.css" />
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/mob.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/materialize.css') }}" />
 
         </head>
 
@@ -83,12 +83,12 @@
                                         Dashboard</a>
                                 </li>
                                 <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-list-ul"
-                                            aria-hidden="true"></i> Listing</a>
+                                            aria-hidden="true"></i> Tours</a>
                                     <div class="collapsible-body left-sub-menu">
                                         <ul>
-                                            <li><a href="listing-all.html">All listing</a>
+                                            <li><a href="{{ route('createnewtour') }}">Add New Tour</a>
                                             </li>
-                                            <li><a href="listing-add.html">Add New listing</a>
+                                            <li><a href="listing-all.html">All listing</a>
                                             </li>
                                             <li><a href="listing-cat-all.html">All listing Categories</a>
                                             </li>

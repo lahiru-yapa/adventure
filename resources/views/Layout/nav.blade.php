@@ -98,15 +98,19 @@
                                 <li class="menu-item-has-children"><a href="#">Adventure Categories
                                     </a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('destination1') }}">Hiking and Trekking</a></li>
-                                        <li><a href="destination-details.html">Mountain Abseiling </a></li>
-                                        <li><a href="destination.html">Waterfall Abseiling </a></li>
-                                        <li><a href="destination.html">Kayaking </a></li>
-                                        <li><a href="destination.html">Surfing </a></li>
-                                        <li><a href="destination.html">Water Rafting</a></li>
-                                        <li><a href="destination.html">Gutsy girls (girls only hike/ abseil)</a></li>
-                                        <li><a href="destination.html">Couple Tours</a></li>
-                                        <li><a href="destination.html">Village Tours</a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 1]) }}">Hiking and
+                                                Trekking</a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 2]) }}">Mountain Abseiling </a>
+                                        </li>
+                                        <li><a href="{{ route('destination1', ['id' => 3]) }}">Waterfall Abseiling </a>
+                                        </li>
+                                        <li><a href="{{ route('destination1', ['id' => 4]) }}">Kayaking </a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 5]) }}">Surfing </a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 6]) }}">Water Rafting</a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 7]) }}">Gutsy girls (girls only
+                                                hike/ abseil)</a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 8]) }}">Couple Tours</a></li>
+                                        <li><a href="{{ route('destination1', ['id' => 9]) }}">Village Tours</a></li>
                                     </ul>
                                 </li>
 
